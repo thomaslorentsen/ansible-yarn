@@ -1,2 +1,9 @@
 ---
+- name: download yarn
+  get_url:
+    url: "https://yarnpkg.com/install.sh"
+    dest: /tmp/install.sh
+
+- name: install yarn
+  shell: "cat /tmp/install.sh | bash -s -- --version 1.12.3"
 ...
