@@ -2,10 +2,10 @@
 - name: download yarn
   get_url:
     url: "https://yarnpkg.com/install.sh"
-    dest: /tmp/install-yarn.sh
+    dest: "/tmp/install-yarn-{{ yarn_version }}.sh"
 
 - name: install yarn
-  shell: "cat /tmp/install-yarn.sh | bash -s -- --version 1.12.3"
+  shell: "cat /tmp/install-yarn-{{ yarn_version }}.sh | bash -s -- --version {{ yarn_version }}"
   args:
     creates: /usr/local/bin/yarn
 ...
